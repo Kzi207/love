@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html, body {
+          /* Thay đổi màu nền tại đây */
+          background-color: #f6f6f6;
+          margin: 0;
+          padding: 0;
+    }
+
+    img {max-width: 100%;}
+
+    body {
+          display: grid;
+          font-family: "Segoe UI", sans-serif;
+          grid-template-columns: repeat(12, 1fr);
+          grid-auto-rows: minmax(auto, auto);
+          color: #383838;
+          text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
+    }
+
+    h1 {
+          font-weight: lighter;
+          grid-column: span 3;
+          text-align: center;
+          color: #ec407a;
+    }
+
+    #wrapper {
+          display: grid;
+          grid-column: 3 / 11;
+          grid-template-columns: repeat(3, 1fr);
+          grid-auto-rows: minmax(auto, auto);
+          grid-row-gap: 10px;
+          margin-top: 3.6rem;
+    }
+
+    #clock-box, #info {
+          grid-column: span 3;
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+    }
+
+    #clock-box #clock {
+          grid-column: 4 / 10;
+          background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+          padding: .6rem 2rem;
+          padding-top: .8rem;
+          text-align: center;
+          font-size: 2.4rem;
+          border-radius: 10rem;
+    }
+
+    date, time {
+          display: block;
+    }
+
+    date {
+          font-size: 18px;
+    }
+
+    time {
+          font-family: "Arial", sans-serif;
+          line-height: 3.2rem;
+          letter-spacing: 2px;
+    }
+
+    .avt {
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+    }
+
+    #info {
+          margin-top: 2.6rem;
+    }
+
+    #heart {
+          grid-column: span 2;
+          display: grid;
+          grid-template-rows: 2;
+          font-size: 44px;
+          color: #b90d46;
+          align-self: center;
+          padding-bottom: 2.6rem;
+          text-align: center;
+    }
+
+    anni {
+          font-size: 16px;
+          letter-spacing: 0.2px;
+    }
+
+    #info .one {
+          grid-column: 3 / 6;
+          text-align: center;
+    }
+
+    #info .two {
+          grid-column: 8 / 11;
+          text-align: center;
+    }
+
+    footer {
+          grid-column: span 3;
+          text-align: center;
+          font-size: 1.6rem;
+          font-weight: lighter;
+          margin-top: 1.2rem;
+    }
+
+    #music {
+          grid-column: 2;
+          position: relative;
+          z-index: 1000;
+          opacity: .4;
+    }
+
+    #music audio {
+          width: 100%;
+    }
+
+    #mask {
+          background-image: linear-gradient(to top, #6d44cc5d 0%, #f09cd880 100%);
+          opacity: .42;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+    }
+
+    @media (max-width: 992px) {
+          #wrapper {
+                grid-column: span 12;
+          }
+
+          #clock-box #clock {
+                grid-column: 2 / 12;
+          }
+
+          .avt {
+                width: 120px;
+                height: 120px;
+          }
+
+          #info .one, #info .two{
+                grid-column: span 12;;
+          }
+
+          #heart {
+                grid-column: span 12;
+                padding-bottom: 1rem;
+          }
+
+          footer {
+                font-size: 1.2rem;
+                margin: 0;
+                padding-bottom: 2rem;
+          }
+
+          #music audio {
+                width: revert;
+          }
+    }
+  </style>
+ <!--- icon không thay-->
+  <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/AYgZemP.jpeg" />
+
+    <!-- 0. Tiêu đề website -->
+    <title>Kzi💜??</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- 1. Tiêu đề -->
+        <h1>TRẢI QUA</h1>
+
+        <div id="clock-box">
+            <div id="clock">
+                <!-- Nơi hiển thì số ngày yêu nhau (bạn không cần thay đổi gì cũng được) -->
+                <date>0 Ngày</date>
+                <time>00:00:00</time>
+            </div>
+        </div>
+
+        <div id="info">
+            <div class="one">
+                <!-- 3. Ảnh của bạn nam -->
+                <img src="https://i.imgur.com/Ndokzoj.jpeg" class="avt">
+                <!-- 4. Tên bạn nam -->
+                <p>Khánh Duy</p>
+            </div>
+            <div id="heart">
+                💜<anni>...</anni>
+            </div>
+            <div class="two">
+                <!-- 5. Ảnh của bạn nữ -->
+                <img src="https://i.imgur.com/IHgmwWQ.jpeg" class="avt">
+                <!-- 6. Tên của bạn nữ -->
+                <p>Thúy Liễu</p>
+            </div>
+        </div>
+
+        <!-- Phần play nhạc (không cần thay đổi) -->
+        <div id="music">
+            <audio loop autoplay controls>Your browser does not support the audio element.</audio>
+        </div>
+
+        <!-- 7. Tiêu đề bên dưới -->
+        <footer>💕 Cảm ơn vì khoảng thời gian ta bên nhau 💕</footer>
+    </div>
+
+    <script>
+      // Ngày bắt đầu yêu nhau
+      const yourDate = new Date("2022-11-04T20:00:00");
+
+      //  link nhạc//
+
+ const musicLink = 'https://files.catbox.moe/8kjfzh.ogg';
+
+      document.addEventListener('DOMContentLoaded', function () {
+          var rootTime = document.querySelector("time");
+
+          document.querySelector("anni").textContent = `${(yourDate.getDate() > 9) ? yourDate.getDate() : "0" + yourDate.getDate()}-${(yourDate.getMonth() > 8) ? (yourDate.getMonth() + 1) : "0" + (yourDate.getMonth() + 1)}-${yourDate.getFullYear()}`;
+
+          document.querySelector("date").textContent = Math.floor(Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24) + " Ngày";
+
+          function olock() {
+              var today = new Date(),
+                  hrs = (Math.floor(Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
+                  min = (Math.floor(Math.floor((today - yourDate) / 1000) / 60)) % 60,
+                  sec = Math.floor((today - yourDate) / 1000) % 60;
+              rootTime.textContent = `${(hrs > 9) ? hrs : "0" + hrs}:${(min > 9) ? min : "0" + min}:${(sec > 9) ? sec : "0" + sec}`;
+          }
+
+          olock();
+          var timer = setInterval(function () {
+              olock()
+          }, 1000);
+
+          document.querySelector("audio").setAttribute("src", musicLink);
+
+          document.getElementsByTagName("body")[0].insertAdjacentHTML(
+              "beforeend",
+              "<div id='mask'></div>"
+          );
+      }, false);
+
+    </script>
+</body>
+
+</html>
